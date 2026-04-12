@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Pompéia Villachan-Lyra · Psicóloga</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: #fdf9f7;
+    color: #3a2a2a;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 430px;
+    margin: 0 auto;
+    background: #fdf9f7;
+    min-height: 100vh;
+    box-shadow: 0 0 60px rgba(0,0,0,0.07);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+  }
+
+  .hero-fade {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 55%;
+    background: linear-gradient(to top, rgba(45,20,15,0.78) 0%, rgba(45,20,15,0.3) 60%, transparent 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 0 1.5rem 1.6rem;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-cred {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-top: 6px;
+  }
+
+  /* BORBOLETAS */
+  .bf-group {
+    position: absolute;
+    top: 16px; right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    pointer-events: none;
+  }
+
+  /* BOTÕES */
+  .btns {
+    padding: 1.5rem 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: filter 0.18s, transform 0.1s;
+  }
+
+  .btn:hover { filter: brightness(0.94); }
+  .btn:active { transform: scale(0.98); }
+
+  .btn-rose  { background: #f2d9d0; color: #7a2e1e; }
+  .btn-green { background: #e4ede0; color: #3a5c2a; }
+  .btn-soft  { background: #f7f0ec; color: #7a2e1e; border: 0.5px solid #e0c4b8; }
+
+  .btn-icon {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .btn-label { flex: 1; text-align: center; }
+
+  /* SEPARADOR */
+  .sep {
+    display: flex; align-items: center; gap: 10px;
+    margin: 1.8rem 1.25rem 0;
+    opacity: 0.3;
+  }
+  .sep-line { flex: 1; height: 0.5px; background: #a06050; }
+  .sep-dot  { width: 3px; height: 3px; border-radius: 50%; background: #a06050; }
+
+  /* SOBRE */
+  .sobre {
+    padding: 1.75rem 1.25rem 0;
+    scroll-margin-top: 20px;
+  }
+
+  .sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    color: #8a3020;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.01em;
+  }
+
+  .sobre-text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #4a3232;
+  }
+
+  .sobre-text p { margin-bottom: 1rem; }
+  .sobre-text p:last-child { margin-bottom: 0; }
+
+  .sobre-cta {
+    font-weight: 500;
+    color: #7a2e1e;
+    font-style: italic;
+  }
+
+  /* TAGS */
+  .areas {
+    padding: 1.75rem 1.25rem 0;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0.8rem;
+  }
+
+  .tag {
+    font-size: 12px;
+    font-weight: 300;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 0.5px solid #c9897a;
+    color: #7a2e1e;
+    background: transparent;
+    letter-spacing: 0.02em;
+  }
+
+  /* ENTRELAÇOS */
+  .brand-strip {
+    margin: 2rem 1.25rem 0;
+    background: #f2ede8;
+    border-radius: 16px;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 0.5px solid #ddd0c4;
+    text-decoration: none;
+  }
+
+  .brand-knot { flex-shrink: 0; }
+
+  .brand-info { flex: 1; }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .brand-name .e { color: #a05040; }
+  .brand-name .rest { color: #4a6a3a; }
+
+  .brand-sub {
+    font-size: 11px;
+    font-weight: 300;
+    color: #8a7060;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  .brand-url {
+    font-size: 11px;
+    color: #a05040;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: block;
+  }
+
+  .brand-arrow {
+    font-size: 18px;
+    color: #c09080;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 2.5rem;
+    padding: 0 1.25rem 2.5rem;
+    text-align: center;
+    border-top: 0.5px solid #ead8d0;
+    padding-top: 1.5rem;
+  }
+
+  .footer-sig {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #b08878;
+    letter-spacing: 0.06em;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+    color: #c0a898;
+    margin-top: 4px;
+    font-weight: 300;
+  }
+
+  /* FADE-IN ANIMATION */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .btns, .sobre, .areas, .brand-strip, .footer {
+    animation: fadeUp 0.5s ease both;
+  }
+  .btns         { animation-delay: 0.1s; }
+  .sobre        { animation-delay: 0.15s; }
+  .areas        { animation-delay: 0.2s; }
+  .brand-strip  { animation-delay: 0.25s; }
+  .footer       { animation-delay: 0.3s; }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO COM FOTO -->
+  <div class="hero">
+    <img class="hero-photo" src="Pomp_sentada_roupaBranca.jpg" alt="Pompéia Villachan-Lyra">
+
+    <!-- borboletas decorativas -->
+    <div class="bf-group">
+      <svg width="60" height="80" viewBox="0 0 60 80" fill="none" opacity="0.55">
+        <g transform="translate(30,12)">
+          <path d="M0 0C-4-6-14-8-16-4C-18 0-12 5 0 0Z" fill="#e8a090"/>
+          <path d="M0 0C4-6 14-8 16-4C18 0 12 5 0 0Z" fill="#f0b8a8"/>
+          <path d="M0 0C-3 4-10 10-12 7C-14 4-8 2 0 0Z" fill="#e8a090"/>
+          <path d="M0 0C3 4 10 10 12 7C14 4 8 2 0 0Z" fill="#f0b8a8"/>
+        </g>
+        <g transform="translate(14,32) scale(0.7) rotate(-15)">
+          <path d="M0 0C-4-6-14-8-16-4C-18 0-12 5 0 0Z" fill="#f0b8a8"/>
+          <path d="M0 0C4-6 14-8 16-4C18 0 12 5 0 0Z" fill="#e8c4b8"/>
+          <path d="M0 0C-3 4-10 10-12 7C-14 4-8 2 0 0Z" fill="#f0b8a8"/>
+          <path d="M0 0C3 4 10 10 12 7C14 4 8 2 0 0Z" fill="#e8c4b8"/>
+        </g>
+        <g transform="translate(40,42) scale(0.55) rotate(10)">
+          <path d="M0 0C-4-6-14-8-16-4C-18 0-12 5 0 0Z" fill="#e8a090"/>
+          <path d="M0 0C4-6 14-8 16-4C18 0 12 5 0 0Z" fill="#f0b8a8"/>
+          <path d="M0 0C-3 4-10 10-12 7C-14 4-8 2 0 0Z" fill="#e8a090"/>
+          <path d="M0 0C3 4 10 10 12 7C14 4 8 2 0 0Z" fill="#f0b8a8"/>
+        </g>
+        <g transform="translate(22,58) scale(0.45) rotate(-8)">
+          <path d="M0 0C-4-6-14-8-16-4C-18 0-12 5 0 0Z" fill="#f0c0b0"/>
+          <path d="M0 0C4-6 14-8 16-4C18 0 12 5 0 0Z" fill="#f8d0c4"/>
+          <path d="M0 0C-3 4-10 10-12 7C-14 4-8 2 0 0Z" fill="#f0c0b0"/>
+          <path d="M0 0C3 4 10 10 12 7C14 4 8 2 0 0Z" fill="#f8d0c4"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-fade"></div>
+    <div class="hero-content">
+      <div class="hero-name">Pompéia Villachan-Lyra</div>
+      <div class="hero-cred">Psicóloga Clínica &amp; Neuropsicóloga</div>
+    </div>
+  </div>
+
+  <!-- BOTÕES -->
+  <div class="btns">
+    <a class="btn btn-rose" href="#sobre">
+      <div class="btn-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="5" r="2.5" stroke="#7a2e1e" stroke-width="1.2"/>
+          <path d="M2 13C2 10 4 8 7 8C10 8 12 10 12 13" stroke="#7a2e1e" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="btn-label">Sobre mim</span>
+    </a>
+
+    <a class="btn btn-rose" href="https://wa.me/5581995919090?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">
+      <div class="btn-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="1.5" y="2" width="11" height="9" rx="2" stroke="#7a2e1e" stroke-width="1.2"/>
+          <path d="M4 5H10M4 7.5H7.5" stroke="#7a2e1e" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="btn-label">Agendar consulta</span>
+    </a>
+
+    <a class="btn btn-green" href="https://entrelacospsiedu.com.br" target="_blank" rel="noopener">
+      <div class="btn-icon" style="background:rgba(255,255,255,0.5);">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="7" r="5.5" stroke="#3a5c2a" stroke-width="1.2"/>
+          <path d="M7 1.5C7 1.5 9.5 4 9.5 7C9.5 10 7 12.5 7 12.5" stroke="#3a5c2a" stroke-width="1" stroke-linecap="round"/>
+          <path d="M7 1.5C7 1.5 4.5 4 4.5 7C4.5 10 7 12.5 7 12.5" stroke="#3a5c2a" stroke-width="1" stroke-linecap="round"/>
+          <path d="M1.5 7H12.5" stroke="#3a5c2a" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="btn-label">Site Entrelaços</span>
+    </a>
+
+    <a class="btn btn-soft" href="https://entrelacospsiedu.com.br/eventos" target="_blank" rel="noopener">
+      <div class="btn-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="1.5" y="2.5" width="11" height="10" rx="1.5" stroke="#7a2e1e" stroke-width="1.2"/>
+          <path d="M4.5 1.5V3.5M9.5 1.5V3.5" stroke="#7a2e1e" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M1.5 6H12.5" stroke="#7a2e1e" stroke-width="0.8"/>
+          <circle cx="4.5" cy="9" r="0.8" fill="#7a2e1e"/>
+          <circle cx="7" cy="9" r="0.8" fill="#7a2e1e"/>
+          <circle cx="9.5" cy="9" r="0.8" fill="#7a2e1e"/>
+        </svg>
+      </div>
+      <span class="btn-label">Agenda &amp; Eventos</span>
+    </a>
+  </div>
+
+  <div class="sep"><div class="sep-line"></div><div class="sep-dot"></div><div class="sep-line"></div></div>
+
+  <!-- SOBRE MIM -->
+  <section class="sobre" id="sobre">
+    <div class="sec-title">Sobre mim</div>
+    <div class="sobre-text">
+      <p>Psicóloga Clínica, Neuropsicóloga e professora universitária com mais de 20 anos de trajetória ao lado de crianças, adolescentes e famílias, ajudando a compreender emoções, comportamentos e, principalmente, relações.</p>
+      <p>Uma formação acadêmica sólida sustenta essa prática: mestrado, doutorado e pós-doutorado em Psicologia do Desenvolvimento. Mas é a escuta, a presença e o encontro com cada história que chegam em primeiro lugar.</p>
+      <p>A prática integra a Teoria do Apego, a Psicologia do Desenvolvimento e a Neurociência do Desenvolvimento, com atenção às necessidades emocionais de cada fase da vida. A orientação parental ocupa um lugar muito especial nesse trabalho. Quando famílias se sentem mais seguras e acolhidas, as crianças crescem com mais vínculo, segurança e presença.</p>
+      <p>Além da clínica, há atuação como palestrante e dedicação à formação de pais e profissionais diante dos desafios contemporâneos: uso de telas, mudanças nas relações familiares e saúde emocional de crianças e adolescentes.</p>
+      <p>Há também uma história pessoal que atravessa esse trabalho: ser esposa e mãe de uma menina linda aproxima ainda mais as reflexões da realidade vivida pelas famílias acompanhadas.</p>
+      <p class="sobre-cta">Se você chegou até aqui, talvez esteja tentando entender melhor seu filho. Talvez esteja diante de uma dificuldade. Ou simplesmente desejando fazer diferente.<br><br>Você não precisa fazer isso sozinho. Este trabalho existe para caminhar com você, com escuta, acolhimento e orientação baseada em ciência.</p>
+    </div>
+  </section>
+
+  <div class="sep" style="margin-top:1.8rem;"><div class="sep-line"></div><div class="sep-dot"></div><div class="sep-line"></div></div>
+
+  <!-- ÁREAS -->
+  <div class="areas">
+    <div class="sec-title">Áreas de atuação</div>
+    <div class="tags">
+      <span class="tag">Psicologia Infantil</span>
+      <span class="tag">Neuropsicologia</span>
+      <span class="tag">Adolescência</span>
+      <span class="tag">Orientação Parental</span>
+      <span class="tag">Teoria do Apego</span>
+      <span class="tag">Saúde Emocional</span>
+      <span class="tag">Uso de Telas</span>
+      <span class="tag">Família</span>
+      <span class="tag">Desenvolvimento Infantil</span>
+    </div>
+  </div>
+
+  <div class="sep" style="margin-top:1.8rem;"><div class="sep-line"></div><div class="sep-dot"></div><div class="sep-line"></div></div>
+
+  <!-- ENTRELAÇOS -->
+  <a class="brand-strip" href="https://entrelacospsiedu.com.br" target="_blank" rel="noopener">
+    <div class="brand-knot">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="23.5" fill="#f5f0ea" stroke="#ddd0c4" stroke-width="0.5"/>
+        <path d="M24 13C18 13 14 17 14 22C14 27 18 31 24 31" stroke="#a05040" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M24 31C30 31 34 27 34 22C34 17 30 13 24 13" stroke="#4a6a3a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="33" cy="16" rx="2.5" ry="1.8" stroke="#a05040" stroke-width="1" fill="none" transform="rotate(-20 33 16)"/>
+        <path d="M33.5 17.5L35 20.5M35 17L36.5 19.5" stroke="#a05040" stroke-width="0.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="brand-info">
+      <div class="brand-name"><span class="e">Entre</span><span class="rest">laços</span></div>
+      <div class="brand-sub">Psicologia e Educação</div>
+      <span class="brand-url">entrelacospsiedu.com.br →</span>
+    </div>
+    <span class="brand-arrow">›</span>
+  </a>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-sig">Pompéia Villachan-Lyra</div>
+    <div class="footer-copy">© 2025 · Entrelaços Psicologia e Educação · Todos os direitos reservados</div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelector('a[href="#sobre"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('sobre').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
