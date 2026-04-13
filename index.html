@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pompéia Villachan-Lyra . Psicóloga Clínica & Neuropsicóloga</title>
+  <meta name="description" content="Psicóloga Clínica e Neuropsicóloga, com mais de 20 anos de experiência ao lado de crianças, adolescentes e famílias. Desenvolvimento infantil, parentalidade, uso de telas e saúde emocional." />
+  <meta name="theme-color" content="#6F8B7A" />
+
+  <meta property="og:title" content="Pompéia Villachan-Lyra . Psicóloga Clínica & Neuropsicóloga" />
+  <meta property="og:description" content="Desenvolvimento infantil, parentalidade, uso de telas e saúde emocional, com base científica e linguagem acessível." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://entrelacospsiedu.com.br/pompeia/" />
+  <meta property="og:image" content="https://entrelacospsiedu.com.br/pompeia/assets/preview.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --verde: #6F8B7A;
+      --verde-escuro: #4D6858;
+      --terracota: #B8745E;
+      --rosa: #D8B6B1;
+      --areia: #F7F3EE;
+      --branco: #FFFFFF;
+      --texto: #2E2A28;
+      --texto-suave: #5B5552;
+      --borda: rgba(111, 139, 122, 0.18);
+      --sombra: 0 12px 30px rgba(59, 49, 45, 0.08);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --max: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, #faf7f2 0%, #f7f3ee 100%);
+      color: var(--texto);
+      font-family: "Jost", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      padding: 20px 16px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--borda);
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+    }
+
+    .hero {
+      overflow: hidden;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 4.8;
+      object-fit: cover;
+      background: #e8e0d8;
+    }
+
+    .hero-content {
+      padding: 22px 18px 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--verde-escuro);
+      background: rgba(111, 139, 122, 0.1);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      color: var(--texto);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--terracota);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .positioning {
+      font-size: 1rem;
+      color: var(--texto-suave);
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 22px 18px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      color: var(--verde-escuro);
+    }
+
+    .lead p + p,
+    .about p + p {
+      margin-top: 12px;
+    }
+
+    .button-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 18px;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(59, 49, 45, 0.08);
+    }
+
+    .btn-primary {
+      background: var(--verde);
+      color: var(--branco);
+    }
+
+    .btn-primary:hover {
+      background: var(--verde-escuro);
+    }
+
+    .btn-secondary {
+      background: rgba(184, 116, 94, 0.08);
+      color: var(--terracota);
+      border-color: rgba(184, 116, 94, 0.18);
+    }
+
+    .btn-soft {
+      background: rgba(216, 182, 177, 0.12);
+      color: var(--texto);
+      border-color: rgba(216, 182, 177, 0.25);
+    }
+
+    .specialties {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .specialties li {
+      padding: 14px 14px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(111, 139, 122, 0.08), rgba(216, 182, 177, 0.08));
+      border: 1px solid var(--borda);
+      font-weight: 500;
+      color: var(--texto);
+    }
+
+    .entrelacos-box {
+      background: linear-gradient(180deg, rgba(111, 139, 122, 0.08), rgba(184, 116, 94, 0.08));
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .entrelacos-box p + p {
+      margin-top: 10px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px;
+      border-radius: 14px;
+      background: var(--branco);
+      border: 1px solid var(--borda);
+    }
+
+    .contact-label {
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+    }
+
+    .contact-value {
+      font-weight: 600;
+      color: var(--verde-escuro);
+      word-break: break-word;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px 14px 10px;
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
+    .signature {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      color: var(--terracota);
+      margin-bottom: 4px;
+    }
+
+    .micro {
+      font-size: 0.84rem;
+      margin-top: 6px;
+      opacity: 0.85;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 720px) {
+      .page {
+        padding: 34px 20px 56px;
+      }
+
+      .hero-content,
+      .section {
+        padding: 28px 28px;
+      }
+
+      .button-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .specialties {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+
+      <section class="card hero">
+        <img
+          class="hero-image"
+          src="assets/foto-pompeia.jpg"
+          alt="Pompéia Villachan-Lyra"
+        />
+
+        <div class="hero-content">
+          <span class="eyebrow">Psicóloga Clínica & Neuropsicóloga</span>
+
+          <h1>Pompéia Villachan-Lyra</h1>
+          <p class="subtitle">Clínica, parentalidade, desenvolvimento infantil e saúde emocional</p>
+
+          <p class="positioning">
+            Psicóloga Clínica e Neuropsicóloga, com mais de 20 anos de experiência ao lado de crianças, adolescentes e famílias.
+            Doutora e pós-doutora em Psicologia do Desenvolvimento.
+          </p>
+
+          <p class="positioning">
+            Meu trabalho integra Teoria do Apego, Neurociência do Desenvolvimento e orientação parental, ajudando pais a compreenderem o comportamento dos filhos com mais clareza, segurança e menos culpa.
+          </p>
+
+          <p class="positioning">
+            Acredito que o desenvolvimento acontece nas relações.
+            E quando os adultos se sentem mais seguros, as crianças também se organizam melhor emocionalmente.
+          </p>
+
+          <p class="positioning">
+            Se você busca orientação para lidar com desafios do desenvolvimento, comportamento ou uso de telas, este espaço é para caminhar com você.
+          </p>
+        </div>
+      </section>
+
+      <section class="card section" id="links">
+        <h2>Acessos</h2>
+
+        <div class="button-grid">
+          <a
+            class="btn btn-primary track-click"
+            href="https://wa.me/5581995919090?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-event="click_whatsapp_agendar"
+          >
+            Agendar consulta
+          </a>
+
+          <a
+            class="btn btn-secondary track-click"
+            href="#agenda"
+            data-event="click_agenda_eventos"
+          >
+            Agenda & Eventos
+          </a>
+
+          <a
+            class="btn btn-soft track-click"
+            href="#sobre"
+            data-event="click_sobre_mim"
+          >
+            Sobre mim
+          </a>
+
+          <a
+            class="btn btn-soft track-click"
+            href="https://entrelacospsiedu.com.br/materiais"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-event="click_livros_materiais"
+          >
+            Livros / Materiais
+          </a>
+
+          <a
+            class="btn btn-secondary track-click"
+            href="#entrelacos"
+            data-event="click_entrelacos"
+          >
+            Entrelaços
+          </a>
+        </div>
+      </section>
+
+      <section class="card section">
+        <h2>Especialidades</h2>
+        <ul class="specialties">
+          <li>Desenvolvimento infantil</li>
+          <li>Orientação parental</li>
+          <li>Comportamento e vínculos</li>
+          <li>Uso de telas e saúde emocional</li>
+          <li>Neuropsicologia clínica</li>
+          <li>Crianças, adolescentes e famílias</li>
+        </ul>
+      </section>
+
+      <section class="card section" id="sobre">
+        <h2>Sobre mim</h2>
+        <div class="about">
+          <p>Psicóloga Clínica, Neuropsicóloga e professora universitária, com mais de 20 anos de trajetória ao lado de crianças, adolescentes e famílias.</p>
+
+          <p>Minha formação acadêmica inclui mestrado, doutorado e pós-doutorado em Psicologia do Desenvolvimento. Mas, ao longo desses anos, o que mais sustenta o meu trabalho é a escuta atenta, a presença e o encontro com cada história.</p>
+
+          <p>A prática integra a Teoria do Apego, a Neurociência do Desenvolvimento e a orientação parental, com um olhar cuidadoso para as necessidades emocionais de cada fase da vida.</p>
+
+          <p>Muitos dos desafios que chegam até a clínica hoje estão relacionados às mudanças nas relações familiares, às dificuldades de manejo do comportamento e ao impacto das telas no desenvolvimento. Por isso, meu trabalho também se dedica a ajudar pais e educadores a compreenderem esses contextos com mais clareza e segurança.</p>
+
+          <p>A orientação parental ocupa um lugar central. Quando os adultos conseguem compreender melhor o que está por trás do comportamento das crianças, as relações se tornam mais seguras, e o desenvolvimento acontece de forma mais saudável.</p>
+
+          <p>Além da clínica, atuo na formação de pais e profissionais, na produção de conteúdo e em palestras sobre desenvolvimento infantil, vínculos e saúde emocional.</p>
+
+          <p>Também sou mãe. E essa experiência atravessa o meu olhar, aproximando ainda mais a teoria da vida real.</p>
+
+          <p>Se você chegou até aqui, talvez esteja buscando entender melhor seu filho, lidar com alguma dificuldade ou simplesmente fazer diferente.
+          Você não precisa fazer isso sozinho(a).
+          Este trabalho existe para caminhar com você, com acolhimento, clareza e orientação baseada em ciência.</p>
+        </div>
+      </section>
+
+      <section class="card section" id="agenda">
+        <h2>Agenda & Eventos</h2>
+        <div class="lead">
+          <p>Em breve, aqui você poderá acompanhar cursos, palestras, encontros e materiais especiais.</p>
+          <p>Enquanto isso, para saber da agenda atual ou solicitar participação em eventos, fale comigo pelo WhatsApp.</p>
+          <div style="margin-top: 16px;">
+            <a
+              class="btn btn-primary track-click"
+              href="https://wa.me/55SEUNUMEROAQUI?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20agenda%20e%20eventos."
+              target="_blank"
+              rel="noopener noreferrer"
+              data-event="click_whatsapp_agenda"
+            >
+              Falar sobre agenda
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="entrelacos">
+        <h2>Entrelaços</h2>
+        <div class="entrelacos-box">
+          <p>O Entrelaços é um projeto vinculado à minha atuação, voltado à integração entre desenvolvimento humano, educação e saúde emocional.</p>
+          <p>É um espaço de formação, conteúdo e construção de diálogo entre ciência, família e prática cotidiana.</p>
+          <p style="margin-top: 16px;">
+            <a
+              class="btn btn-secondary track-click"
+              href="https://entrelacospsiedu.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-event="click_site_entrelacos"
+            >
+              Conhecer o Entrelaços
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section class="card section" id="contato">
+        <h2>Contato</h2>
+
+        <div class="contact-list">
+          <a
+            class="contact-item track-click"
+            href="https://wa.me/55819995919090?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-event="click_whatsapp_contato"
+          >
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">(81) 99591-9090</span>
+          </a>
+
+          <a
+            class="contact-item track-click"
+            href="mailto: entrelacos@dominio.com.br"
+            data-event="click_email_contato"
+          >
+            <span class="contact-label">E-mail</span>
+            <span class="contact-value">entrelacospsiedu@gmail.com</span>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="signature">Pompéia Villachan-Lyra</div>
+        <div>Psicóloga Clínica & Neuropsicóloga</div>
+        <div class="micro">© 2026 . Todos os direitos reservados.</div>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLE0FFPEQH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TLE0FFPEQH');
+  </script>
+
+  <script>
+    document.querySelectorAll('.track-click').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var eventName = el.getAttribute('data-event') || 'click_link';
+        if (typeof gtag === 'function') {
+          gtag('event', eventName, {
+            link_text: el.textContent.trim(),
+            link_url: el.href
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
